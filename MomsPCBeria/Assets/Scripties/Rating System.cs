@@ -14,5 +14,6 @@ public class RatingSystem : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         correctpins = correctpins - 1;
+        Debug.Log("UHHH");
     }
 }

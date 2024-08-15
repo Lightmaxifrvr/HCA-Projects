@@ -109,9 +109,19 @@ public class MainMenuHandler : MonoBehaviour
         Screen.fullScreen = fullscreen;
     }
 
-    public void Volume(float Volume)
+    public void MainVolume(float Volume)
     {
         mixer.SetFloat("volume", Volume);
+    }
+
+    public void MusicVolume(float Volume)
+    {
+        mixer.SetFloat("musicvolume", Volume);
+    }
+
+    public void SFXVolume(float Volume)
+    {
+        mixer.SetFloat("sfxvol", Volume);
     }
 
 
