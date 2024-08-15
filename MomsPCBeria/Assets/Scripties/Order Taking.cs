@@ -14,18 +14,22 @@ public class OrderTaking : MonoBehaviour
     public GameObject Prefab3;
     public GameObject Prefab4;
     public GameObject Prefab5;
-
+    public GameObject SideView;
+    public GameObject OrderView;
+    public GameObject PCBView;
+    public GameObject ShippingView;
     // Start is called before the first frame update
     void Start()
     {
         SelectCustomer();
         InstantiateCustomer();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+       
     }
 
     void SelectCustomer()
@@ -58,6 +62,37 @@ public class OrderTaking : MonoBehaviour
         {
             Instantiate(Prefab5, new Vector3(0, 0, 0), Quaternion.identity);
         }
+        StartCoroutine(WaitFor(8));
 
+
+
+    }
+
+    IEnumerator WaitFor(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SideView.SetActive(false);
+        OrderView.SetActive(true);
+
+    }
+
+
+    public void OnOrderPress()
+    {
+        PCBView.SetActive(false);
+        ShippingView.SetActive(false);
+        OrderView.SetActive(true);
+    }
+    public void OnPCBPress()
+    {
+        PCBView.SetActive(true);
+        ShippingView.SetActive(false);
+        OrderView.SetActive(false);
+    }
+    public void OnShippingPress()
+    {
+        PCBView.SetActive(false);
+        ShippingView.SetActive(true);
+        OrderView.SetActive(false);
     }
 }
