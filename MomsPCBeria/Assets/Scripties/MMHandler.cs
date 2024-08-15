@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 public class MainMenuHandler : MonoBehaviour
 {
+    public AudioMixer mixer;
     public GameObject menu1;
     public GameObject menu2;
     public GameObject menu3;
@@ -35,6 +38,11 @@ public class MainMenuHandler : MonoBehaviour
     public void SetFullscreen(bool fullscreen)
     {
         Screen.fullScreen = fullscreen;
+    }
+
+    public void Volume(float Volume)
+    {
+        mixer.SetFloat("volume", Volume);
     }
 
 

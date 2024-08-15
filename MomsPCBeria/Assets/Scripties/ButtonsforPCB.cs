@@ -6,6 +6,8 @@ public class ButtonsforPCB : MonoBehaviour
 {
     public GameObject HP;
     public GameObject VP;
+    public GameObject HVP;
+    public GameObject VHP;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +21,21 @@ public class ButtonsforPCB : MonoBehaviour
 
     public void HButton()
     {
-        Instantiate(HP, new Vector3(0, 32, 0), Quaternion.identity);
+        Instantiate(HP);
     }
 
     public void VButton()
     {
-        Instantiate(VP, new Vector3(0, 32, 0), Quaternion.identity);
+        Instantiate(VP);
+    }
+
+    public void HVButton()
+    {
+        Instantiate(HVP);
+    }
+
+    public void VHButton()
+    {
+        Instantiate(VHP);
     }
 }
