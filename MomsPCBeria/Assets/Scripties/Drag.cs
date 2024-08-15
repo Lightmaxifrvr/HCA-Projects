@@ -3,6 +3,8 @@ using UnityEngine;
 public class Drag : MonoBehaviour {
   private bool dragging = false;
   private Vector3 offset;
+    public AudioClip clip;
+  
 
   // Update is called once per frame
   void Update() {
@@ -19,8 +21,10 @@ public class Drag : MonoBehaviour {
   }
 
   private void OnMouseUp() {
-    // Stop dragging.
+ 
     dragging = false;
-  }
+    GetComponent<AudioSource>().Play();
+
+    }
 }
 
