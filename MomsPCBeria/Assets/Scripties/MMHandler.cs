@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class MainMenuHandler : MonoBehaviour
 {
     public GameObject menu1;
@@ -17,8 +17,7 @@ public class MainMenuHandler : MonoBehaviour
 
     public void SelMenu1()
     {
-        menu1.SetActive(true);
-        PrevMenu.SetActive(false);
+        SceneManager.LoadScene("Game");
     }
 
     public void SelMenu2()
